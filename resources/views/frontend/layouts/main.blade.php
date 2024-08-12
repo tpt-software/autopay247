@@ -36,7 +36,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
     <script src="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js
     "></script>
-    <!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="app_url" content="{{ route('index') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/chat.css') }}">
