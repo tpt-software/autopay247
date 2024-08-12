@@ -1,0 +1,25 @@
+.telegram-link{display:block;width:60px;height:60px;position:relative}.telegram-link::after{content:'';position:absolute;top:5px;right:5px;width:12px;height:12px;background-color:#0f0;border-radius:50%;z-index:1}.telegram-link img{width:60px;border-radius:60%;z-index:2}.telegram-icon{position:fixed;bottom:20px;right:20px;z-index:9999}.chat-box{position:fixed;bottom:20px;right:20px;width:300px;background-color:#fff;border:1px solid #ccc;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.1)}.chat-header{padding:10px;border-bottom:1px solid #ccc;display:flex;align-items:center;color:#000}.chat-header img{width:60px;height:60px;border-radius:50%;margin-right:10px}.chat-content{padding:10px;background-color:#f0f0f0;color:#000}.support-info h3,.support-info p{margin:0}.close-btn{cursor:pointer;position:absolute;top:5px;right:5px;font-size:20px;color:#999}.telegram-chat-link{display:inline-block;padding:5px 10px;background-color:#08c;color:#fff;text-decoration:none;border-radius:5px;margin:2px}.fb-chat-link{display:inline-block;padding:5px 10px;background-color:#d23eeb;color:#fff;text-decoration:none;border-radius:5px}.telegram-chat-link img{width:20px;margin-right:5px}
+.telegram-chat-link {
+    display: flex;
+	font-size: 14px;
+}
+.close-btn {
+    font-size: 30px;
+    text-decoration: none;
+    top: -10px;
+}
+div#no-result, #err-bank-sell {
+    color: red;
+    font-size: 18px;
+}
+#err-bank-sell {
+	margin-top:-10px;
+}
+div#verified-sell {
+    color: green;
+    font-size: 18px;
+    margin-top: -8px;
+}
+div#final-status {
+    color: green;
+}

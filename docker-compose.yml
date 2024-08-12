@@ -1,0 +1,10 @@
+version: '3'
+services:
+  autobank:
+    image: autobank:latest
+    build: .
+    network_mode: "host"
+    container_name: autobank
+    restart: always
+    ports: 
+      - 81:81
