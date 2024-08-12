@@ -100,11 +100,7 @@
                 </div>
                 <div class="header__main--content__auth-btn">
                     <div class="header__main--content__auth-btn--btn-buy">
-                        <a href="{{ route('verify') }}" class="transaction">
-                            <div>
-                                Mua
-                            </div>
-                        </a>
+                        <button class="transaction" data-bs-toggle="modal" data-bs-target="#chooseVerify" id="verify-button">Mua</button>
                     </div>
                     <div class="header__main--content__auth-btn--btn-sell">
                         <a class="transaction item-buy-sell" id="btnSell" href="{{ route('sell') }}">
@@ -168,9 +164,17 @@
             </div>
         </div>
     </section>
-
+    @include('frontend.includes.chooseVerifyHome')
 @endsection
 @section('script')
+    <script>
+        jQuery( document ).ready( function(){
+            jQuery('#continue-button-home').on('click',function(){
+                var checkedValue = $('input[name="fav_language"]:checked').val();
+                window.location.href = checkedValue;
+            });
+        });
+    </script> 
     <script>
         // setInterval(() => {
         $.ajax({

