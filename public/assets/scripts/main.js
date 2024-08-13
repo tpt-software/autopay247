@@ -286,12 +286,6 @@ $(document).ready(function () {
                 if (response.hasOwnProperty('verified')) {
                     localStorage.setItem('verified_' + bankNumber, 1);
 
-                    // Scroll to payment-button
-                    $('html, body').animate({
-                        scrollTop: $('#payment-button').offset().top
-                    }, 1000);
-
-
                     $('#verify-button').addClass('d-none');
                     $('#payment-button').removeClass('d-none');
                     bankResult.removeClass('d-none');
@@ -369,6 +363,23 @@ $(document).ready(function () {
                     if( response.verified == 2 ){
                         $('#payment-button').addClass('d-none');
                         $('#verify-button').removeClass('d-none');
+                    }
+                }
+
+                if (response.code == "00") {
+                    if (window.innerWidth < 768) {
+                        var selector = $('#verify-button');
+                        if( !$('#verify-button').hasClass('d-none') ){
+                            selector = $('#verify-button');
+                        }
+                        if( !$('#payment-button').hasClass('d-none') ){
+                            selector = $('#payment-button');
+                        }
+                        setTimeout(() => {
+                            $('html, body').animate({
+                                scrollTop: selector.offset().top
+                            }, 1000);
+                        }, 500);
                     }
                 }
             },

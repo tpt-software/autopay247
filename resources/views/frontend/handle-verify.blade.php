@@ -140,7 +140,7 @@
                                             <div class="css-ot2ytd">
                                                 <div data-bn-type="text" class="css-4q9gwc theme--text">Thanh toán</div>
                                                 <div data-bn-type="text" class="css-1dmj7t7 theme--text">
-                                                    @if (!isset($verified))
+                                                    @if (!isset($verified) && false)
                                                     Xác minh bằng chuyển khoản ngân hàng 50K: Bạn sẽ được hoàn tiền ngay lập tức kèm mã OTP xác minh trong nội dung. Thời gian hoàn thành là ngay tức thì sau khi bạn nhập mã OTP.
                                                     @else
                                                     Xác minh bằng chuyển khoản ngân hàng 50K: Bạn sẽ được hoàn tiền ngay lập tức.
@@ -172,8 +172,7 @@
                                                             <div class="css-epiuoh">
                                                                 <div class="css-164229y">
                                                                     <div class="css-10nf7hq">
-                                                                        <div data-bn-type="text" class="css-vspdms theme--text">Nội
-                                                                            dung chuyển khoản</div>
+                                                                        <div data-bn-type="text" class="css-vspdms theme--text">Nội dung chuyển khoản</div>
                                                                         <div class="css-1f9551p"><svg
                                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                                 viewBox="0 0 24 24" fill="none"
@@ -282,15 +281,9 @@
                                             <div class="css-1arnokf">
                                                 <div class="css-1hph6e4">
                                                     <div class="css-uliqdc">
-                                                        <div data-bn-type="text" class="css-4q9gwc theme--text">Nhận mã code</div>
+                                                        <div data-bn-type="text" class="css-4q9gwc theme--text">Đợi xác minh</div>
                                                         <div class="css-1w1kjhg">
-                                                            <div data-bn-type="text" class="css-spxc6d theme--text">Sau khi bạn chuyển
-                                                                khoản cho hệ thống, hệ thống sẽ hoàn trả ngay lập tức và kèm
-                                                                mã
-                                                                xác minh OTP trong phần nội dung.
-                                                                Việc xác minh bằng chuyển khoản để thực hiện việc xác định
-                                                                bạn
-                                                                là chủ tài khoản này.
+                                                            <div data-bn-type="text" class="css-spxc6d theme--text">Sau khi bạn chuyển khoản cho hệ thống, hệ thống sẽ hoàn trả ngay lập tức
                                                                 <div class="css-1f9551p"><svg
                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                         viewBox="0 0 24 24" fill="none"
