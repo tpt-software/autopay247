@@ -119,10 +119,19 @@ class TransactionController extends Controller
 
     public function getVietQrCode($param)
     {
+        $orderId = $param['orderId'];
+        $ss_key = 'getVietQrCode_'.$orderId;
+        $result = session()->get($ss_key,[]);
+
+        if( isset($result['qrCode']) ){
+            return $result;
+        }
+        
         $url      = "https://api.vietqr.org/vqr/api/qr/generate-customer";
         $token    = $this->getVietQrToken()['access_token'];
         $response = Http::withToken($token)->withBody(json_encode($param), 'application/json')->post($url);
         $result   = $response->json();
+        session()->put($ss_key, $result);
         return $result;
     }
 
