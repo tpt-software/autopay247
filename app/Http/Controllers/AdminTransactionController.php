@@ -120,6 +120,8 @@ class AdminTransactionController extends Controller
         );
         $transactionFee = @$cryptoNetworks[$transaction->state][$transaction->network]['transactionFee'];
         $transactionFee = $transactionFee ? $transactionFee : 0;
+        // Tắt tính phí
+        $transactionFee = 0;
         $recvWindow = 5000;
         $param = [
             'coin' => $transaction->state,
